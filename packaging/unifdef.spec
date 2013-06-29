@@ -6,6 +6,7 @@ Summary:        Removes ifdefs from C files
 Url:            http://dotat.at/prog/unifdef/
 Group:          Development/Tools
 Source:         http://dotat.at/prog/unifdef/%{name}-%{version}.tar.gz
+Source1001: 	unifdef.manifest
 
 %description
 Unifdef is useful for removing ifdef'ed lines from a file while otherwise
@@ -22,6 +23,7 @@ prog %{name} = {
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 make %?_smp_mflags CC=gcc CFLAGS="%{optflags}"
@@ -30,6 +32,7 @@ make %?_smp_mflags CC=gcc CFLAGS="%{optflags}"
 make install DESTDIR=%{buildroot} prefix=%{_prefix}
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %{_bindir}/unifdef
 %{_bindir}/unifdefall
