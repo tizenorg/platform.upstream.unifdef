@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012 Tony Finch <dot@dotat.at>
+ * Copyright (c) 2012 - 2014 Tony Finch <dot@dotat.at>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -37,7 +37,6 @@
 #include <io.h>
 
 #define stat     _stat
-#define snprintf _snprintf
 
 /* fake stdbool.h */
 #define true 1
